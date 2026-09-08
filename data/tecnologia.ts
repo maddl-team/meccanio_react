@@ -85,3 +85,47 @@ export const materialiFaqs: FaqItem[] = [
     a: "Le indicazioni specifiche di manutenzione variano da modello a modello: fai riferimento alla scheda tecnica del prodotto o contatta l’assistenza tecnica.",
   },
 ];
+
+export const motionEngine = {
+  title: "AI MotionEngine: l'Intelligenza di HyperShell | Meccanio",
+  description:
+    "Come funziona l'AI MotionEngine di HyperShell: sensori, algoritmo predittivo e modalità di assistenza che si adattano al tuo movimento in tempo reale.",
+  heroImage: "/images/hypershell/ultra/engine.jpg",
+} as const;
+
+export const motionEngineSteps: DesignArea[] = [
+  {
+    no: "01",
+    title: "Rilevamento",
+    desc: "Sensori inerziali integrati nel dispositivo misurano in tempo reale il tuo passo, l’inclinazione del terreno e i cambi di ritmo.",
+  },
+  {
+    no: "02",
+    title: "Elaborazione",
+    desc: "Un algoritmo predittivo interpreta questi dati per stimare il tipo di sforzo richiesto in quel preciso momento del percorso.",
+  },
+  {
+    no: "03",
+    title: "Assistenza",
+    desc: "I motori erogano la spinta più adatta alla condizione rilevata, aumentando il supporto in salita o su terreno irregolare, riducendolo in pianura.",
+  },
+];
+
+export const motionEngineFaqs: FaqItem[] = [
+  {
+    q: "L’intelligenza adattiva funziona anche su terreni molto irregolari, come sentieri di montagna?",
+    a: "Sì, è pensata proprio per rilevare e adattarsi ai cambi di pendenza e alla superficie irregolare tipici di un percorso di montagna.",
+  },
+  {
+    q: "Serve regolare manualmente l’assistenza durante il percorso?",
+    a: "No, il sistema regola automaticamente il livello di spinta in base alle condizioni rilevate; è comunque possibile selezionare una modalità predefinita prima di iniziare.",
+  },
+  {
+    q: "L’assistenza è la stessa su tutti i modelli HyperShell?",
+    a: "Il principio di funzionamento è identico su tutta la gamma; cambia il numero di modalità disponibili e la potenza massima erogabile, in base al modello scelto.",
+  },
+  {
+    q: "Quanto tempo serve per abituarsi a camminare con l’assistenza attiva?",
+    a: "Essendo pensata per accompagnare il movimento naturale senza alterarlo, la maggior parte degli utenti non richiede un periodo di adattamento significativo.",
+  },
+];

@@ -248,6 +248,10 @@
   text-wrap: pretty;
 }
 
+.textEnd {
+  margin-bottom: 0;
+}
+
 .featurePhoto {
   position: relative;
   min-height: 420px;
@@ -574,6 +578,14 @@
 .matCard:hover {
   border-color: var(--color-accent);
   transform: translateY(-4px);
+}
+
+.matNo {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--color-accent);
+  margin-bottom: 18px;
 }
 
 .matName {

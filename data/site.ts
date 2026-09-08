@@ -59,6 +59,7 @@ export const navItems: NavItem[] = [
     label: "Tecnologia",
     children: [
       { href: "/tecnologia", label: "La tecnologia" },
+      { href: "/tecnologia/ai-motionengine", label: "AI MotionEngine" },
       {
         href: "/tecnologia/materiali-e-ingegneria",
         label: "Materiali e ingegneria",
@@ -336,6 +337,7 @@ export const footerColumns: FooterColumn[] = [
       { href: "/hypershell", label: "HyperShell · serie X" },
       { href: "/hypershell/x-ultra", label: "HyperShell X Ultra" },
       { href: "/tecnologia", label: "Tecnologia" },
+      { href: "/tecnologia/ai-motionengine", label: "AI MotionEngine" },
       { href: "/tecnologia/materiali-e-ingegneria", label: "Materiali e ingegneria" },
     ],
   },

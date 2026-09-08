@@ -25,7 +25,7 @@ export function MotionEngineSection() {
             supporto che si modula automaticamente tra pianura, salita e terreno
             irregolare, restando sempre coerente con il tuo movimento naturale.
           </p>
-          <Button href="/hypershell" variant="underline">
+          <Button href="/tecnologia/ai-motionengine" variant="underline">
             Approfondisci l&apos;AI MotionEngine →
           </Button>
         </div>
