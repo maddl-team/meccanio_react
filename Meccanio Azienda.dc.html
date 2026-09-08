@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{margin:0;background:#F5F7FA;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{text-decoration:none;color:inherit}
+  ::selection{background:#1E5BFF;color:#fff}
+  @keyframes mecPulse{0%,100%{opacity:1}50%{opacity:.35}}
+</style>
+</helmet>
+
+<div style="font-family:'Manrope',sans-serif;background:#F5F7FA;color:#0B0E14;overflow-x:hidden;--ac:#1E5BFF">
+
+  <!-- ANNOUNCEMENT -->
+  <div style="background:#0B0E14;color:#E7ECF3;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:14px;padding:9px 20px;text-align:center">
+    <span style="width:7px;height:7px;border-radius:50%;background:var(--ac,#1E5BFF);display:inline-block;animation:mecPulse 2s ease-in-out infinite"></span>
+    Società di ingegneria · Robotica applicata alla persona e al lavoro · Roma e Centro Italia
+  </div>
+
+  <!-- HEADER -->
+  <header ref="{{ headerRef }}" style="position:sticky;top:0;z-index:50;background:rgba(11,14,20,0);transition:background .3s ease,box-shadow .3s ease,border-color .3s ease;border-bottom:1px solid rgba(255,255,255,0)">
+    <div style="max-width:1560px;margin:0 auto;padding:0 28px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="Meccanio Home Corporate.dc.html" data-mec-logo style="display:flex;align-items:center;gap:10px;color:#fff;transition:color .3s">
+        <span style="width:26px;height:26px;border:2px solid var(--ac,#1E5BFF);border-radius:6px;display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+          <span style="width:9px;height:9px;background:var(--ac,#1E5BFF);border-radius:2px"></span>
+        </span>
+        <span style="font-family:'Space Grotesk';font-weight:700;font-size:21px;letter-spacing:-.02em">MECCANIO</span>
+      </a>
+      <nav data-mec-nav style="display:flex;align-items:center;gap:28px;font-weight:500;font-size:15px;color:rgba(255,255,255,.88)">
+        <a href="#" data-mec-active style="transition:color .2s">Azienda</a>
+        <a href="Meccanio Home Corporate.dc.html#competenze" style="transition:color .2s">Competenze</a>
+        <a href="Meccanio Home Corporate.dc.html#settori" style="transition:color .2s">Settori</a>
+        <a href="Meccanio Home Corporate.dc.html#metodo" style="transition:color .2s">Metodo</a>
+        <a href="Meccanio Home Corporate.dc.html#soluzioni" style="transition:color .2s">Soluzioni</a>
+        <a href="#visione" style="transition:color .2s">Visione</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:18px">
+        <a href="Meccanio Home Corporate.dc.html#partner" data-mec-ghost style="font-weight:600;font-size:14px;color:rgba(255,255,255,.88)">Produttori</a>
+        <a href="#contatti" style="font-family:'Space Grotesk';font-weight:600;font-size:14px;background:var(--ac,#1E5BFF);color:#fff;padding:11px 20px;border-radius:9px;transition:transform .15s,box-shadow .15s;box-shadow:0 6px 22px rgba(30,91,255,.32)" style-hover="transform:translateY(-1px);box-shadow:0 10px 28px rgba(30,91,255,.45)">Prenota una dimostrazione</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative;min-height:76vh;display:flex;flex-direction:column;justify-content:flex-end;margin-top:-74px;overflow:hidden;background:#0B0E14">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#11151d 0 18px,#0d1119 18px 36px)"></div>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.2em;color:#3a4456;text-transform:uppercase">[ foto · ufficio tecnico / officina Meccanio · 3200×1700 ]</span>
+    </div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,20,.7) 0%,rgba(11,14,20,.25) 42%,rgba(11,14,20,.6) 76%,rgba(11,14,20,.96) 100%)"></div>
+    <div style="position:relative;max-width:1560px;width:100%;margin:0 auto;padding:0 28px 72px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ac,#1E5BFF);margin-bottom:22px">Chi Siamo</div>
+      <h1 style="font-family:'Space Grotesk';font-weight:600;color:#fff;font-size:clamp(36px,4.9vw,70px);line-height:1.02;letter-spacing:-.03em;max-width:1000px;margin-bottom:26px;text-wrap:pretty">25 anni di ingegneria meccanica, al servizio del corpo umano.</h1>
+      <p style="color:rgba(231,236,243,.82);font-size:clamp(16px,1.4vw,19px);line-height:1.6;max-width:760px;margin-bottom:34px;text-wrap:pretty">Meccanio nasce dalla progettazione meccanica, dall'automazione industriale e dalla ricerca applicata. Non siamo un rivenditore che aggiunge un catalogo di prodotti: siamo un'azienda di ingegneria italiana che porta nel mercato degli esoscheletri un background tecnico reale, fatto di brevetti, studi, prototipazione e collaborazioni con realtà industriali e scientifiche.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px">
+        <a href="#contatti" style="font-family:'Space Grotesk';font-weight:600;font-size:16px;background:var(--ac,#1E5BFF);color:#fff;padding:16px 30px;border-radius:11px;box-shadow:0 10px 30px rgba(30,91,255,.4);transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(-2px);box-shadow:0 16px 40px rgba(30,91,255,.55)">Prenota una dimostrazione</a>
+        <a href="#brevetti" style="font-family:'Space Grotesk';font-weight:600;font-size:16px;background:rgba(255,255,255,.08);color:#fff;padding:16px 30px;border-radius:11px;border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(8px);transition:background .2s" style-hover="background:rgba(255,255,255,.16)">Scopri i nostri brevetti &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERCHÉ -->
+  <section style="max-width:1560px;margin:0 auto;padding:96px 28px 20px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:56px;align-items:start">
+      <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(30px,3.5vw,46px);line-height:1.06;letter-spacing:-.02em;text-wrap:pretty">Perché un'azienda di ingegneria entra nel mercato degli esoscheletri</h2>
+      <div>
+        <p style="color:#46505f;font-size:18px;line-height:1.65;text-wrap:pretty">Non vendiamo un esoscheletro "uguale per tutti". Analizziamo l'esigenza, scegliamo il modello corretto, lo facciamo provare sul campo e garantiamo formazione e assistenza post-vendita sul territorio italiano. È lo stesso approccio con cui, da 25 anni, affrontiamo la progettazione meccanica: partire dal problema reale, non dal prodotto da vendere.</p>
+        <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap">
+          <sc-for list="{{ approachChips }}" as="c" hint-placeholder-count="5">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#0B0E14;border:1px solid #D5DBE5;background:#fff;padding:9px 14px;border-radius:99px">{{ c.label }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRE PILASTRI -->
+  <section style="max-width:1560px;margin:0 auto;padding:70px 28px 96px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:40px">
+      <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(28px,3.2vw,42px);line-height:1.05;letter-spacing:-.02em">I tre pilastri di Meccanio</h2>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9aa4b2">01 — 03</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px">
+      <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="3">
+        <div style="background:{{ p.bg }};border:1px solid {{ p.border }};border-radius:18px;padding:40px 36px;display:flex;flex-direction:column;min-height:330px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;color:{{ p.no }};margin-bottom:auto">{{ p.step }}</div>
+          <h3 style="font-family:'Space Grotesk';font-weight:600;font-size:24px;line-height:1.14;letter-spacing:-.015em;color:{{ p.ink }};margin:28px 0 12px;text-wrap:pretty">{{ p.title }}</h3>
+          <p style="font-size:15.5px;line-height:1.6;color:{{ p.sub }};text-wrap:pretty">{{ p.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- BACKGROUND TECNICO -->
+  <section id="brevetti" style="background:#0B0E14;color:#fff;padding:100px 0;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#0e1219 0 22px,#0c0f16 22px 44px);opacity:.6"></div>
+    <div style="position:relative;max-width:1560px;margin:0 auto;padding:0 28px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:56px;align-items:start">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ac,#1E5BFF);margin-bottom:18px">Background tecnico</div>
+          <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(30px,3.5vw,46px);line-height:1.05;letter-spacing:-.02em;margin-bottom:26px;text-wrap:pretty">Un background tecnico che va oltre gli esoscheletri</h2>
+          <p style="color:rgba(231,236,243,.78);font-size:17px;line-height:1.65;margin-bottom:18px;text-wrap:pretty">Meccanio è titolare di diversi brevetti nazionali legati alla progettazione meccanica e all'innovazione tecnologica. Negli anni, l'azienda ha collaborato con enti di ricerca, università, aziende industriali e organismi legati alla sicurezza sul lavoro, in ambiti che comprendono automazione, macchine speciali, energia, healthcare e sistemi industriali.</p>
+          <p style="color:rgba(231,236,243,.78);font-size:17px;line-height:1.65;margin-bottom:32px;text-wrap:pretty">Non ci presentiamo come produttori certificati di esoscheletri proprietari, ma come partner tecnico specializzato nella selezione, integrazione, dimostrazione e supporto di queste tecnologie — con un background ingegneristico che precede di molti anni il nostro ingresso in questo mercato.</p>
+          <a href="#" style="font-family:'Space Grotesk';font-weight:600;font-size:15px;background:var(--ac,#1E5BFF);color:#fff;padding:15px 26px;border-radius:11px;display:inline-block;transition:transform .15s" style-hover="transform:translateY(-2px)">Scopri brevetti e progettazione meccanica &rarr;</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden">
+          <sc-for list="{{ domains }}" as="d" hint-placeholder-count="6">
+            <div style="background:#0B0E14;padding:30px 26px;min-height:150px;display:flex;flex-direction:column">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--ac,#1E5BFF);margin-bottom:auto">{{ d.no }}</div>
+              <h4 style="font-family:'Space Grotesk';font-weight:600;font-size:18px;letter-spacing:-.01em;margin-top:22px">{{ d.name }}</h4>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIONE -->
+  <section id="visione" style="max-width:1560px;margin:0 auto;padding:96px 28px">
+    <div style="background:#fff;border:1px solid #E4E8EF;border-radius:20px;padding:56px 52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:48px;align-items:center">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ac,#1E5BFF);margin-bottom:18px">La visione</div>
+        <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(28px,3.2vw,42px);line-height:1.05;letter-spacing:-.02em;text-wrap:pretty">Non solo esoscheletri: la visione Meccanio</h2>
+      </div>
+      <div>
+        <p style="color:#46505f;font-size:18px;line-height:1.65;margin-bottom:28px;text-wrap:pretty">Gli esoscheletri sono il punto di partenza, non il punto di arrivo. La nostra direzione è diventare un riferimento italiano per le tecnologie robotiche, cibernetiche e di assistenza applicate alla persona, al lavoro e alla sicurezza.</p>
+        <a href="Meccanio Home Corporate.dc.html#visione" style="font-family:'Space Grotesk';font-weight:600;font-size:15px;color:#0B0E14;border-bottom:2px solid var(--ac,#1E5BFF);padding-bottom:3px">Scopri la nostra visione &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENZE E STUDI -->
+  <section style="max-width:1560px;margin:0 auto;padding:0 28px 96px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:36px">
+      <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(28px,3.2vw,42px);line-height:1.05;letter-spacing:-.02em">Referenze e studi tecnici</h2>
+      <p style="max-width:620px;color:#5A6573;font-size:16.5px;line-height:1.6;text-wrap:pretty">Le nostre collaborazioni con enti e aziende autorevoli, insieme agli studi tecnici sviluppati in questi anni, sono raccolti in due sezioni dedicate — utili per chi vuole valutare la nostra competenza ingegneristica prima di affidarci una fornitura.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:20px">
+      <sc-for list="{{ resources }}" as="r" hint-placeholder-count="2">
+        <a href="#" style="position:relative;border-radius:18px;overflow:hidden;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;background:#0B0E14;transition:transform .3s,box-shadow .3s" style-hover="transform:translateY(-4px);box-shadow:0 30px 60px rgba(11,14,20,.24)">
+          <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#12161e 0 16px,#0e1219 16px 32px)"></div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#39414f;text-transform:uppercase">[ {{ r.shot }} ]</span></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,20,.15),rgba(11,14,20,.92))"></div>
+          <div style="position:relative;padding:36px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ac,#1E5BFF);margin-bottom:14px">{{ r.kicker }}</div>
+            <h3 style="font-family:'Space Grotesk';font-weight:600;font-size:26px;color:#fff;letter-spacing:-.015em;margin-bottom:10px">{{ r.title }}</h3>
+            <p style="color:rgba(231,236,243,.72);font-size:15px;line-height:1.55;max-width:400px;margin-bottom:18px">{{ r.desc }}</p>
+            <span style="font-family:'Space Grotesk';font-weight:600;color:#fff;font-size:15px;border-bottom:2px solid var(--ac,#1E5BFF);padding-bottom:3px">{{ r.cta }}</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background:#0F1219;color:#fff;padding:96px 0">
+    <div style="max-width:1560px;margin:0 auto;padding:0 28px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:52px;align-items:start">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ac,#1E5BFF);margin-bottom:18px">FAQ</div>
+          <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(28px,3.2vw,44px);line-height:1.04;letter-spacing:-.02em">Domande frequenti su Meccanio</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
+            <div style="background:#151a23;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden">
+              <button onClick="{{ f.toggle }}" style="width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:24px 26px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;font-family:'Space Grotesk';font-weight:600;font-size:17.5px;line-height:1.3;color:#fff">
+                <span style="text-wrap:pretty">{{ f.q }}</span>
+                <span style="flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:22px;color:var(--ac,#1E5BFF);transition:transform .2s;transform:{{ f.rot }}">+</span>
+              </button>
+              <sc-if value="{{ f.isOpen }}" hint-placeholder-val="">
+                <div style="padding:0 26px 26px;color:rgba(231,236,243,.72);font-size:15.5px;line-height:1.65;text-wrap:pretty">{{ f.a }}</div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="contatti" style="max-width:1560px;margin:0 auto;padding:96px 28px">
+    <div style="background:var(--ac,#1E5BFF);color:#fff;border-radius:22px;padding:64px 56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:48px;align-items:center">
+      <div>
+        <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(30px,3.5vw,46px);line-height:1.04;letter-spacing:-.025em;margin-bottom:16px;text-wrap:pretty">Parla con chi progetta la meccanica da 25 anni</h2>
+        <p style="font-size:18px;line-height:1.6;opacity:.92;max-width:520px;text-wrap:pretty">Che tu debba risolvere un problema di ergonomia sul lavoro o scegliere il tuo prossimo esoscheletro, partiamo sempre dall'esigenza reale.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:flex-end">
+        <a href="mailto:staff@meccanio.it" style="font-family:'Space Grotesk';font-weight:600;font-size:16px;background:#fff;color:#0B0E14;padding:17px 30px;border-radius:11px;transition:transform .15s" style-hover="transform:translateY(-2px)">Prenota una dimostrazione</a>
+        <a href="mailto:staff@meccanio.it" style="font-family:'Space Grotesk';font-weight:600;font-size:16px;background:rgba(255,255,255,.14);color:#fff;padding:17px 30px;border-radius:11px;border:1px solid rgba(255,255,255,.4);transition:background .2s" style-hover="background:rgba(255,255,255,.24)">Contattaci</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0B0E14;color:#fff;padding:72px 0 36px">
+    <div style="max-width:1560px;margin:0 auto;padding:0 28px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:40px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.1)">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+            <span style="width:26px;height:26px;border:2px solid var(--ac,#1E5BFF);border-radius:6px;display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;background:var(--ac,#1E5BFF);border-radius:2px"></span></span>
+            <span style="font-family:'Space Grotesk';font-weight:700;font-size:20px;letter-spacing:-.02em">MECCANIO</span>
+          </div>
+          <p style="color:rgba(231,236,243,.55);font-size:14.5px;line-height:1.6;max-width:320px">Ingegneria, automazione e robotica applicata alla persona e al lavoro.</p>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(231,236,243,.4);margin-bottom:18px">Azienda</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px;color:rgba(231,236,243,.75)">
+            <a href="#" style="transition:color .2s" style-hover="color:#fff">Chi siamo</a>
+            <a href="#brevetti" style="transition:color .2s" style-hover="color:#fff">Brevetti e progettazione</a>
+            <a href="#" style="transition:color .2s" style-hover="color:#fff">Referenze</a>
+            <a href="#" style="transition:color .2s" style-hover="color:#fff">Studi tecnici</a>
+            <a href="#visione" style="transition:color .2s" style-hover="color:#fff">Visione</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(231,236,243,.4);margin-bottom:18px">Soluzioni</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px;color:rgba(231,236,243,.75)">
+            <a href="Meccanio HAPO.dc.html" style="transition:color .2s" style-hover="color:#fff">HAPO · esoscheletri passivi</a>
+            <a href="Meccanio Prodotto.dc.html" style="transition:color .2s" style-hover="color:#fff">HyperShell · serie X</a>
+            <a href="Meccanio Home Corporate.dc.html#settori" style="transition:color .2s" style-hover="color:#fff">Settori di applicazione</a>
+            <a href="Meccanio Home Corporate.dc.html#metodo" style="transition:color .2s" style-hover="color:#fff">Come lavoriamo</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(231,236,243,.4);margin-bottom:18px">Contatti</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px;color:rgba(231,236,243,.75)">
+            <span>via della Solfarata, 130<br>00071 Pomezia (RM)</span>
+            <a href="mailto:staff@meccanio.it" style="transition:color .2s" style-hover="color:#fff">staff@meccanio.it</a>
+            <a href="tel:0691250664" style="transition:color .2s" style-hover="color:#fff">06 91 25 06 64</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:28px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;color:rgba(231,236,243,.4)">
+        <span>© 2026 Meccanio Srl — Tutti i diritti riservati</span>
+        <span style="display:flex;gap:22px"><a href="#" style="transition:color .2s" style-hover="color:#fff">Privacy</a><a href="#" style="transition:color .2s" style-hover="color:#fff">Cookie</a><a href="#" style="transition:color .2s" style-hover="color:#fff">Termini</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1E5BFF&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#1E5BFF&quot;,&quot;#0A84FF&quot;,&quot;#0AA2E6&quot;,&quot;#2E5BFF&quot;]}}">
+class Component extends DCLogic {
+  headerRef = React.createRef();
+  state = { openFaq: 0 };
+
+  componentDidMount() {
+    if (this.props.accentColor) document.documentElement.style.setProperty('--ac', this.props.accentColor);
+    this._onScroll = () => {
+      const h = this.headerRef.current;
+      if (!h) return;
+      const solid = window.scrollY > 60;
+      h.style.background = solid ? 'rgba(255,255,255,.92)' : 'rgba(11,14,20,0)';
+      h.style.backdropFilter = solid ? 'blur(12px)' : 'none';
+      h.style.borderBottomColor = solid ? '#E4E8EF' : 'rgba(255,255,255,0)';
+      h.style.boxShadow = solid ? '0 1px 20px rgba(11,14,20,.06)' : 'none';
+      const logo = h.querySelector('[data-mec-logo]');
+      if (logo) logo.style.color = solid ? '#0B0E14' : '#fff';
+      const ink = solid ? '#46505f' : 'rgba(255,255,255,.88)';
+      h.querySelectorAll('[data-mec-nav] a, [data-mec-ghost]').forEach(a => { a.style.color = ink; });
+      const active = h.querySelector('[data-mec-active]');
+      if (active) active.style.color = this.props.accentColor || '#1E5BFF';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentDidUpdate(prev) {
+    if (prev.accentColor !== this.props.accentColor && this.props.accentColor)
+      document.documentElement.style.setProperty('--ac', this.props.accentColor);
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this._onScroll); }
+
+  renderVals() {
+    const ac = this.props.accentColor || '#1E5BFF';
+
+    const approachChips = [
+      { label: 'Analisi dell\u2019esigenza' },
+      { label: 'Scelta del modello' },
+      { label: 'Prova sul campo' },
+      { label: 'Formazione' },
+      { label: 'Assistenza in Italia' },
+    ];
+
+    const pillarRaw = [
+      { step: '01', title: 'Esperienza ingegneristica', desc: '25+ anni in progettazione meccanica, automazione industriale, prototipazione e sviluppo di soluzioni tecniche avanzate, con brevetti nazionali depositati in questi ambiti.' },
+      { step: '02', title: 'Selezione qualificata', desc: 'Non produciamo esoscheletri proprietari: li selezioniamo, valutandoli con competenza tecnica reale, non solo commerciale, tra le soluzioni disponibili sul mercato.' },
+      { step: '03', title: 'Supporto locale', desc: 'Dimostrazioni sul campo, formazione e assistenza post-vendita direttamente in Italia, prima e dopo l\u2019acquisto — per aziende e per privati.' },
+    ];
+    const pillars = pillarRaw.map((p, i) => {
+      const dark = i === 1;
+      return {
+        ...p,
+        bg: dark ? '#0B0E14' : '#fff',
+        border: dark ? '#0B0E14' : '#E4E8EF',
+        ink: dark ? '#fff' : '#0B0E14',
+        sub: dark ? 'rgba(231,236,243,.68)' : '#5A6573',
+        no: dark ? ac : '#b3bcc9',
+      };
+    });
+
+    const domains = [
+      { no: '01', name: 'Automazione' },
+      { no: '02', name: 'Macchine speciali' },
+      { no: '03', name: 'Energia' },
+      { no: '04', name: 'Healthcare' },
+      { no: '05', name: 'Sistemi industriali' },
+      { no: '06', name: 'Sicurezza sul lavoro' },
+    ];
+
+    const resources = [
+      { kicker: 'Collaborazioni', title: 'Referenze', desc: 'Enti di ricerca, università e aziende industriali con cui abbiamo lavorato.', cta: 'Vai alle Referenze \u2192', shot: 'foto · collaborazioni industriali' },
+      { kicker: 'Ricerca applicata', title: 'Studi tecnici', desc: 'Studi e approfondimenti sviluppati negli anni dal nostro ufficio tecnico.', cta: 'Vai agli Studi \u2192', shot: 'foto · documentazione tecnica' },
+    ];
+
+    const faqRaw = [
+      { q: 'Meccanio produce gli esoscheletri o li seleziona?', a: 'Meccanio non produce esoscheletri propri: li seleziona, li integra nei diversi contesti d\u2019uso e garantisce dimostrazione, formazione e assistenza post-vendita, forte di un background ingegneristico maturato in 25 anni di attività.' },
+      { q: 'Che esperienza ha Meccanio prima di entrare nel mercato degli esoscheletri?', a: 'Oltre 25 anni in progettazione meccanica, automazione industriale, prototipazione, con brevetti nazionali e collaborazioni con enti di ricerca, università e aziende industriali.' },
+      { q: 'Perché scegliere Meccanio invece di acquistare direttamente dal produttore?', a: 'Perché offriamo un percorso completo — analisi dell\u2019esigenza, scelta del modello corretto, demo sul campo, formazione e assistenza sul territorio italiano — che un acquisto diretto dal produttore non sempre garantisce.' },
+    ];
+    const faqs = faqRaw.map((f, i) => ({
+      q: f.q, a: f.a,
+      isOpen: this.state.openFaq === i,
+      rot: this.state.openFaq === i ? 'rotate(45deg)' : 'rotate(0deg)',
+      toggle: () => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i })),
+    }));
+
+    return { headerRef: this.headerRef, approachChips, pillars, domains, resources, faqs };
+  }
+}
+</script>
+</body>
+</html>

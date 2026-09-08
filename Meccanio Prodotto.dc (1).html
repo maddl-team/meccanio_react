@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{margin:0;background:#F5F7FA;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{text-decoration:none;color:inherit}
+  ::selection{background:#1E5BFF;color:#fff}
+  @keyframes mecPulse{0%,100%{opacity:1}50%{opacity:.35}}
+</style>
+</helmet>
+
+<div style="font-family:'Manrope',sans-serif;background:#F5F7FA;color:#0B0E14;overflow-x:hidden;--ac:#1E5BFF">
+
+  <!-- ANNOUNCEMENT -->
+  <div style="background:#0B0E14;color:#E7ECF3;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:14px;padding:9px 20px;text-align:center">
+    <span style="width:7px;height:7px;border-radius:50%;background:var(--ac,#1E5BFF);display:inline-block;animation:mecPulse 2s ease-in-out infinite"></span>
+    Spedizione assicurata in tutta Italia · Demo su appuntamento · Supporto tecnico Meccanio
+  </div>
+
+  <!-- HEADER (solid, product page) -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #E4E8EF">
+    <div style="max-width:1560px;margin:0 auto;padding:0 28px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="Meccanio Home.dc.html" style="display:flex;align-items:center;gap:10px;color:#0B0E14">
+        <span style="width:26px;height:26px;border:2px solid var(--ac,#1E5BFF);border-radius:6px;display:flex;align-items:center;justify-content:center;flex:0 0 auto"><span style="width:9px;height:9px;background:var(--ac,#1E5BFF);border-radius:2px"></span></span>
+        <span style="font-family:'Space Grotesk';font-weight:700;font-size:21px;letter-spacing:-.02em">MECCANIO</span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:30px;font-weight:500;font-size:15px;color:#46505f">
+        <a href="#" style="color:var(--ac,#1E5BFF)">Esoscheletri</a>
+        <a href="Meccanio Home.dc.html#mondi">Lavoro · HAPO</a>
+        <a href="Meccanio Home.dc.html#tecnologia">Tecnologia</a>
+        <a href="Meccanio Home.dc.html#azienda">Azienda</a>
+        <a href="Meccanio Home.dc.html#faq">Supporto</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:18px">
+        <a href="#" style="font-weight:600;font-size:14px;color:#46505f">Accedi</a>
+        <a href="#buy" style="font-family:'Space Grotesk';font-weight:600;font-size:14px;background:var(--ac,#1E5BFF);color:#fff;padding:11px 20px;border-radius:9px;box-shadow:0 6px 22px rgba(30,91,255,.28)">Acquista</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div style="max-width:1560px;margin:0 auto;padding:20px 28px 0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;color:#9aa4b2">
+    <a href="Meccanio Home.dc.html" style="transition:color .2s" style-hover="color:#0B0E14">Home</a> &nbsp;/&nbsp;
+    <a href="Meccanio Home.dc.html#prodotti" style="transition:color .2s" style-hover="color:#0B0E14">Esoscheletri</a> &nbsp;/&nbsp;
+    <span style="color:#0B0E14">HyperShell X · {{ selModelName }}</span>
+  </div>
+
+  <!-- PRODUCT MAIN -->
+  <section id="buy" style="max-width:1560px;margin:0 auto;padding:28px 28px 80px">
+    <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:start">
+
+      <!-- GALLERY (sticky) -->
+      <div style="position:sticky;top:94px">
+        <div style="position:relative;aspect-ratio:4/3.4;border-radius:22px;overflow:hidden;background:repeating-linear-gradient(135deg,#eef1f6 0 18px,#e4eaf2 18px 36px);display:flex;align-items:center;justify-content:center;margin-bottom:14px">
+          <span style="position:absolute;top:18px;left:18px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:var(--ac,#1E5BFF);color:#fff;padding:6px 11px;border-radius:7px">Novità</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;color:#9aa4b2;text-transform:uppercase">[ {{ activeShotLabel }} ]</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+          <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="5">
+            <button onClick="{{ g.select }}" style="position:relative;aspect-ratio:1/1;border-radius:12px;overflow:hidden;cursor:pointer;background:repeating-linear-gradient(135deg,#eef1f6 0 10px,#e4eaf2 10px 20px);border:2px solid {{ g.border }};padding:0;transition:border-color .2s">
+              <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:#9aa4b2;text-transform:uppercase">{{ g.short }}</span>
+            </button>
+          </sc-for>
+        </div>
+        <!-- trust strip under gallery -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px">
+          <sc-for list="{{ galleryBadges }}" as="b" hint-placeholder-count="3">
+            <div style="background:#fff;border:1px solid #E4E8EF;border-radius:14px;padding:18px 16px;text-align:center">
+              <div style="font-family:'Space Grotesk';font-weight:700;font-size:18px;color:#0B0E14">{{ b.title }}</div>
+              <div style="color:#5A6573;font-size:12.5px;line-height:1.4;margin-top:4px">{{ b.sub }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- BUY BOX -->
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac,#1E5BFF);margin-bottom:14px">Serie HyperShell X</div>
+        <h1 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(34px,3.6vw,48px);line-height:1.02;letter-spacing:-.025em;margin-bottom:16px">HyperShell <span style="color:var(--ac,#1E5BFF)">{{ selModelName }}</span></h1>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="color:var(--ac,#1E5BFF);font-size:16px;letter-spacing:2px">★★★★★</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5A6573">4,8 · 326 recensioni</span>
+          </div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#1F8A5B;background:rgba(31,138,91,.1);padding:5px 10px;border-radius:7px">Disponibile</span>
+        </div>
+        <p style="color:#46505f;font-size:17px;line-height:1.6;margin-bottom:28px;max-width:480px">{{ selTagline }} Esoscheletro motorizzato con AI MotionEngine: assistenza adattiva a ogni passo, struttura pieghevole in fibra di carbonio e titanio.</p>
+
+        <!-- price -->
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:26px">
+          <span style="font-family:'Space Grotesk';font-weight:700;font-size:38px;letter-spacing:-.02em">{{ selPrice }}</span>
+          <span style="font-size:18px;color:#9aa4b2;text-decoration:line-through">{{ selOldPrice }}</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--ac,#1E5BFF);padding:5px 10px;border-radius:7px">{{ selSave }}</span>
+        </div>
+
+        <!-- model selector -->
+        <div style="margin-bottom:24px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#0B0E14">Modello</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5A6573">{{ selPower }} W · {{ selRange }} km</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+            <sc-for list="{{ models }}" as="m" hint-placeholder-count="4">
+              <button onClick="{{ m.select }}" style="text-align:left;cursor:pointer;background:#fff;border:1.5px solid {{ m.border }};border-radius:13px;padding:14px 16px;transition:border-color .2s,background .2s">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                  <span style="font-family:'Space Grotesk';font-weight:600;font-size:16px;color:#0B0E14">{{ m.name }}</span>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:{{ m.accent }}">{{ m.price }}</span>
+                </div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa4b2;letter-spacing:.04em">{{ m.power }} W · {{ m.range }} km · {{ m.weight }} kg</div>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- color selector -->
+        <div style="margin-bottom:24px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#0B0E14">Colore</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5A6573">{{ selColorName }}</span>
+          </div>
+          <div style="display:flex;gap:12px">
+            <sc-for list="{{ colors }}" as="c" hint-placeholder-count="3">
+              <button onClick="{{ c.select }}" title="{{ c.name }}" style="width:46px;height:46px;border-radius:12px;cursor:pointer;background:{{ c.swatch }};border:2px solid {{ c.border }};box-shadow:inset 0 0 0 2px #fff;padding:0;transition:border-color .2s"></button>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- quantity + add -->
+        <div style="display:flex;gap:12px;margin-bottom:16px">
+          <div style="display:flex;align-items:center;border:1.5px solid #D5DBE5;border-radius:12px;overflow:hidden;background:#fff">
+            <button onClick="{{ decQty }}" style="width:46px;height:54px;border:none;background:none;cursor:pointer;font-size:22px;color:#0B0E14">−</button>
+            <span style="width:40px;text-align:center;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:17px">{{ qty }}</span>
+            <button onClick="{{ incQty }}" style="width:46px;height:54px;border:none;background:none;cursor:pointer;font-size:20px;color:#0B0E14">+</button>
+          </div>
+          <button onClick="{{ addToCart }}" style="flex:1;font-family:'Space Grotesk';font-weight:600;font-size:17px;background:var(--ac,#1E5BFF);color:#fff;border:none;border-radius:12px;cursor:pointer;box-shadow:0 10px 28px rgba(30,91,255,.36);transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(-2px);box-shadow:0 16px 38px rgba(30,91,255,.5)">{{ cartLabel }}</button>
+        </div>
+        <a href="#" style="display:block;text-align:center;font-family:'Space Grotesk';font-weight:600;font-size:16px;background:#0B0E14;color:#fff;padding:16px;border-radius:12px;margin-bottom:24px;transition:background .2s" style-hover="background:#1b212c">Acquista ora</a>
+
+        <!-- reassurance list -->
+        <div style="border-top:1px solid #E4E8EF;padding-top:22px;display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ reassure }}" as="r" hint-placeholder-count="4">
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <span style="flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--ac,#1E5BFF);color:var(--ac,#1E5BFF);display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:1px">✓</span>
+              <div>
+                <span style="font-weight:600;font-size:15px;color:#0B0E14">{{ r.title }}</span>
+                <span style="color:#5A6573;font-size:15px"> — {{ r.sub }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <!-- demo callout -->
+        <div style="margin-top:24px;background:#0B0E14;border-radius:16px;padding:24px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+          <div>
+            <div style="font-family:'Space Grotesk';font-weight:600;font-size:17px;margin-bottom:4px">Vuoi provarlo prima?</div>
+            <div style="color:rgba(231,236,243,.7);font-size:14px">Prenota una demo gratuita con i nostri tecnici.</div>
+          </div>
+          <a href="Meccanio Home.dc.html#contatti" style="font-family:'Space Grotesk';font-weight:600;font-size:14px;background:#fff;color:#0B0E14;padding:12px 20px;border-radius:10px;white-space:nowrap">Prenota demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY SPECS STRIP -->
+  <section style="background:#0B0E14;color:#fff;padding:70px 0">
+    <div style="max-width:1560px;margin:0 auto;padding:0 28px">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden">
+        <sc-for list="{{ keySpecs }}" as="k" hint-placeholder-count="4">
+          <div style="background:#0B0E14;padding:32px 28px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(231,236,243,.5);margin-bottom:14px">{{ k.label }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:clamp(30px,3vw,42px);letter-spacing:-.02em;line-height:1">{{ k.value }}</div>
+            <div style="color:rgba(231,236,243,.55);font-size:13.5px;margin-top:10px;line-height:1.4">{{ k.note }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE BLOCKS (alternating, big imagery) -->
+  <section style="max-width:1560px;margin:0 auto;padding:96px 28px 40px">
+    <sc-for list="{{ features }}" as="f" hint-placeholder-count="3">
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:52px;align-items:center;margin-bottom:56px;direction:{{ f.dir }}">
+        <div style="direction:ltr">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac,#1E5BFF);margin-bottom:16px">{{ f.kicker }}</div>
+          <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(28px,3.2vw,42px);line-height:1.06;letter-spacing:-.02em;margin-bottom:18px">{{ f.title }}</h2>
+          <p style="color:#5A6573;font-size:17px;line-height:1.65;margin-bottom:24px;max-width:520px">{{ f.body }}</p>
+          <div style="display:flex;gap:28px;flex-wrap:wrap">
+            <sc-for list="{{ f.metrics }}" as="m" hint-placeholder-count="2">
+              <div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:26px;color:#0B0E14">{{ m.v }}</div>
+                <div style="color:#9aa4b2;font-size:13px;margin-top:2px">{{ m.l }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="direction:ltr;position:relative;aspect-ratio:4/3.2;border-radius:20px;overflow:hidden;background:repeating-linear-gradient(135deg,#eef1f6 0 18px,#e4eaf2 18px 36px);display:flex;align-items:center;justify-content:center">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#9aa4b2;text-transform:uppercase">[ {{ f.shot }} ]</span>
+        </div>
+      </div>
+    </sc-for>
+  </section>
+
+  <!-- SPEC TABLE -->
+  <section style="max-width:1560px;margin:0 auto;padding:60px 28px 90px">
+    <div style="margin-bottom:36px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac,#1E5BFF);margin-bottom:14px">Confronta la gamma</div>
+      <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(28px,3.2vw,44px);line-height:1.05;letter-spacing:-.02em">Specifiche tecniche</h2>
+    </div>
+    <div style="overflow-x:auto;border:1px solid #E4E8EF;border-radius:18px;background:#fff">
+      <table style="width:100%;border-collapse:collapse;min-width:680px">
+        <thead>
+          <tr>
+            <th style="text-align:left;padding:20px 24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9aa4b2;font-weight:500;border-bottom:1px solid #E4E8EF">Specifica</th>
+            <sc-for list="{{ models }}" as="m" hint-placeholder-count="4">
+              <th style="text-align:left;padding:20px 24px;border-bottom:1px solid #E4E8EF;background:{{ m.thBg }}">
+                <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;color:#0B0E14">{{ m.name }}</div>
+              </th>
+            </sc-for>
+          </tr>
+        </thead>
+        <tbody>
+          <sc-for list="{{ specRows }}" as="row" hint-placeholder-count="7">
+            <tr>
+              <td style="padding:16px 24px;font-size:14.5px;color:#5A6573;border-bottom:1px solid #EEF1F6;font-weight:500">{{ row.label }}</td>
+              <td style="padding:16px 24px;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#0B0E14;border-bottom:1px solid #EEF1F6;background:{{ row.bg0 }}">{{ row.v0 }}</td>
+              <td style="padding:16px 24px;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#0B0E14;border-bottom:1px solid #EEF1F6;background:{{ row.bg1 }}">{{ row.v1 }}</td>
+              <td style="padding:16px 24px;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#0B0E14;border-bottom:1px solid #EEF1F6;background:{{ row.bg2 }}">{{ row.v2 }}</td>
+              <td style="padding:16px 24px;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#0B0E14;border-bottom:1px solid #EEF1F6;background:{{ row.bg3 }}">{{ row.v3 }}</td>
+            </tr>
+          </sc-for>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- IN THE BOX -->
+  <section style="background:#0F1219;color:#fff;padding:90px 0">
+    <div style="max-width:1560px;margin:0 auto;padding:0 28px">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:44px">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac,#1E5BFF);margin-bottom:14px">Nella confezione</div>
+          <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(28px,3.2vw,44px);line-height:1.05;letter-spacing:-.02em">Tutto pronto all'uso.</h2>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+        <sc-for list="{{ boxItems }}" as="b" hint-placeholder-count="4">
+          <div style="background:#151a23;border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden">
+            <div style="aspect-ratio:1/1;background:repeating-linear-gradient(135deg,#1b212c 0 14px,#141923 14px 28px);display:flex;align-items:center;justify-content:center"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#3c4656;text-transform:uppercase">[ {{ b.short }} ]</span></div>
+            <div style="padding:20px 22px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:5px">{{ b.name }}</div>
+              <div style="color:rgba(231,236,243,.55);font-size:13.5px;line-height:1.45">{{ b.sub }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section style="max-width:1560px;margin:0 auto;padding:96px 28px">
+    <div style="display:grid;grid-template-columns:0.8fr 1.2fr;gap:52px;align-items:start">
+      <div style="position:sticky;top:94px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac,#1E5BFF);margin-bottom:14px">Voci dal campo</div>
+        <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(28px,3.2vw,44px);line-height:1.04;letter-spacing:-.02em;margin-bottom:24px">4,8 su 5,<br>da chi lo indossa.</h2>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <span style="color:var(--ac,#1E5BFF);font-size:20px;letter-spacing:3px">★★★★★</span>
+        </div>
+        <p style="color:#5A6573;font-size:15px;line-height:1.6;max-width:360px">Recensioni verificate di clienti Meccanio. Escursionisti, ciclisti e operatori che usano l'esoscheletro ogni giorno.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px">
+        <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="4">
+          <div style="background:#fff;border:1px solid #E4E8EF;border-radius:16px;padding:26px 24px;display:flex;flex-direction:column">
+            <span style="color:var(--ac,#1E5BFF);font-size:14px;letter-spacing:2px;margin-bottom:14px">★★★★★</span>
+            <p style="color:#2a3240;font-size:15.5px;line-height:1.6;margin-bottom:20px;flex:1">“{{ r.text }}”</p>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="width:38px;height:38px;border-radius:50%;background:repeating-linear-gradient(135deg,#eef1f6 0 8px,#e4eaf2 8px 16px);flex:0 0 auto"></span>
+              <div>
+                <div style="font-family:'Space Grotesk';font-weight:600;font-size:14.5px;color:#0B0E14">{{ r.name }}</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#9aa4b2">{{ r.role }}</div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="max-width:980px;margin:0 auto;padding:40px 28px 96px">
+    <div style="text-align:center;margin-bottom:42px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac,#1E5BFF);margin-bottom:14px">Domande sul prodotto</div>
+      <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(28px,3.2vw,42px);line-height:1.05;letter-spacing:-.02em">Prima di acquistare</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+        <div style="background:#fff;border:1px solid #E4E8EF;border-radius:14px;overflow:hidden">
+          <button onClick="{{ f.toggle }}" style="width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-family:'Space Grotesk';font-weight:600;font-size:17px;color:#0B0E14">
+            <span>{{ f.q }}</span>
+            <span style="flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:22px;color:var(--ac,#1E5BFF);transition:transform .2s;transform:{{ f.rot }}">+</span>
+          </button>
+          <sc-if value="{{ f.isOpen }}" hint-placeholder-val="">
+            <div style="padding:0 24px 24px;color:#5A6573;font-size:15.5px;line-height:1.65;max-width:780px">{{ f.a }}</div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0B0E14;color:#fff;padding:64px 0 32px">
+    <div style="max-width:1560px;margin:0 auto;padding:0 28px">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:26px;height:26px;border:2px solid var(--ac,#1E5BFF);border-radius:6px;display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;background:var(--ac,#1E5BFF);border-radius:2px"></span></span>
+          <span style="font-family:'Space Grotesk';font-weight:700;font-size:20px;letter-spacing:-.02em">MECCANIO</span>
+        </div>
+        <a href="Meccanio Home.dc.html#contatti" style="font-family:'Space Grotesk';font-weight:600;font-size:14px;background:var(--ac,#1E5BFF);color:#fff;padding:12px 22px;border-radius:10px">Richiedi una demo</a>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;color:rgba(231,236,243,.4)">
+        <span>© 2026 Meccanio Srl — via della Solfarata 130, Pomezia (RM)</span>
+        <span style="display:flex;gap:22px"><a href="#" style="transition:color .2s" style-hover="color:#fff">Privacy</a><a href="#" style="transition:color .2s" style-hover="color:#fff">Spedizioni</a><a href="#" style="transition:color .2s" style-hover="color:#fff">Resi</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY BUY BAR -->
+  <sc-if value="{{ showStickyBar }}" hint-placeholder-val="">
+    <div style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-top:1px solid #E4E8EF;box-shadow:0 -8px 30px rgba(11,14,20,.08)">
+      <div style="max-width:1560px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+        <div style="display:flex;align-items:center;gap:16px">
+          <span style="width:46px;height:46px;border-radius:11px;background:repeating-linear-gradient(135deg,#eef1f6 0 10px,#e4eaf2 10px 20px);flex:0 0 auto"></span>
+          <div>
+            <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;line-height:1.1">HyperShell {{ selModelName }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5A6573">{{ selColorName }} · {{ selPower }} W</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:18px">
+          <div style="display:flex;align-items:baseline;gap:8px">
+            <span style="font-family:'Space Grotesk';font-weight:700;font-size:22px">{{ selPrice }}</span>
+            <span style="font-size:14px;color:#9aa4b2;text-decoration:line-through">{{ selOldPrice }}</span>
+          </div>
+          <button onClick="{{ addToCart }}" style="font-family:'Space Grotesk';font-weight:600;font-size:15px;background:var(--ac,#1E5BFF);color:#fff;border:none;border-radius:11px;padding:14px 28px;cursor:pointer;box-shadow:0 8px 24px rgba(30,91,255,.34)">{{ cartLabel }}</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1E5BFF&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#1E5BFF&quot;,&quot;#0A84FF&quot;,&quot;#0AA2E6&quot;,&quot;#2E5BFF&quot;]}}">
+class Component extends DCLogic {
+  state = { model: 0, color: 0, shot: 0, qty: 1, openFaq: 0, added: false, scrolled: false };
+
+  componentDidMount() {
+    if (this.props.accentColor) document.documentElement.style.setProperty('--ac', this.props.accentColor);
+    this._onScroll = () => {
+      const s = window.scrollY > 760;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+  }
+  componentDidUpdate(prev){
+    if (prev.accentColor !== this.props.accentColor && this.props.accentColor)
+      document.documentElement.style.setProperty('--ac', this.props.accentColor);
+  }
+  componentWillUnmount(){ window.removeEventListener('scroll', this._onScroll); }
+
+  renderVals() {
+    const ac = this.props.accentColor || '#1E5BFF';
+    const MODELS = [
+      { name: 'X Ultra', power: '1000', range: '30', weight: '1,8', modes: '12', price: '€1.799', oldPrice: '€1.999', save: '−10%', tagline: 'Prestazioni eccellenti per le avventure più estreme.' },
+      { name: 'X Carbon', power: '800', range: '17,5', weight: '1,8', modes: '10', price: '€1.299', oldPrice: '€1.799', save: '−28%', tagline: 'Mobilità massima per un\u2019esplorazione minimalista.' },
+      { name: 'X Pro', power: '800', range: '17,5', weight: '2', modes: '10', price: '€899', oldPrice: '€1.199', save: '−25%', tagline: 'Potenza bilanciata per ogni tipo di superficie.' },
+      { name: 'X Go', power: '400', range: '15', weight: '2', modes: '6', price: '€699', oldPrice: '€999', save: '−30%', tagline: 'Il supporto essenziale per il movimento quotidiano.' },
+    ];
+    const COLORS = [
+      { name: 'Carbon Black', swatch: '#14181f', },
+      { name: 'Storm Grey', swatch: '#8b94a3', },
+      { name: 'Electric Blue', swatch: ac },
+    ];
+    const sel = MODELS[this.state.model];
+
+    const models = MODELS.map((m, i) => ({
+      ...m,
+      select: () => this.setState({ model: i, added: false }),
+      border: this.state.model === i ? ac : '#E4E8EF',
+      accent: this.state.model === i ? ac : '#9aa4b2',
+      thBg: this.state.model === i ? 'rgba(30,91,255,.05)' : '#fff',
+    }));
+    const colors = COLORS.map((c, i) => ({
+      ...c,
+      select: () => this.setState({ color: i }),
+      border: this.state.color === i ? ac : '#E4E8EF',
+    }));
+
+    const shots = ['Vista 3/4', 'Profilo', 'Dettaglio attuatore', 'Indossato', 'Pieghevole'];
+    const gallery = shots.map((s, i) => ({
+      short: 'F' + (i + 1), select: () => this.setState({ shot: i }),
+      border: this.state.shot === i ? ac : 'transparent',
+    }));
+    const activeShotLabel = 'render ' + sel.name + ' · ' + shots[this.state.shot];
+
+    const galleryBadges = [
+      { title: '2 anni', sub: 'di garanzia inclusa' },
+      { title: '14 giorni', sub: 'reso gratuito' },
+      { title: 'Italia', sub: 'assistenza locale' },
+    ];
+
+    const keySpecs = [
+      { label: 'Potenza di picco', value: sel.power + ' W', note: 'motori brushless gemelli' },
+      { label: 'Autonomia', value: sel.range, note: 'km con assistenza · batteria sostituibile' },
+      { label: 'Peso', value: sel.weight, note: 'kg · fibra di carbonio + titanio' },
+      { label: 'Modalità', value: sel.modes, note: 'profili di assistenza adattivi' },
+    ];
+
+    const features = [
+      { dir: 'ltr', kicker: 'AI MotionEngine', title: 'Legge il tuo passo. Spinge al momento giusto.', body: 'Una rete di sensori monitora andatura, pendenza e cadenza centinaia di volte al secondo. L\u2019algoritmo calibra la spinta dei motori in tempo reale: in salita aumenta, in piano si alleggerisce. Il movimento resta naturale, la fatica diminuisce.', shot: 'animazione sensori / spinta adattiva', metrics: [{ v: '−20%', l: 'sforzo in escursione' }, { v: '−39%', l: 'sforzo in bici' }] },
+      { dir: 'rtl', kicker: 'Materiali', title: 'Resistente dove conta, leggero da indossare.', body: 'Telaio in fibra di carbonio e lega di titanio aerospaziale: rigidità strutturale dove serve, peso minimo dove tocca il corpo. Si ripiega in pochi secondi e sta nello zaino.', shot: 'dettaglio telaio carbonio + titanio', metrics: [{ v: sel.weight + ' kg', l: 'peso totale' }, { v: '< 5 s', l: 'per ripiegarlo' }] },
+      { dir: 'ltr', kicker: 'Energia', title: 'Batteria a sgancio rapido. Mai a piedi.', body: 'Sostituisci la batteria in pochi secondi e raddoppia l\u2019autonomia in viaggio. Ricarica completa rapida e indicatore di carica integrato per pianificare ogni uscita.', shot: 'batteria a sgancio rapido', metrics: [{ v: sel.range + ' km', l: 'per carica' }, { v: 'USB-C', l: 'ricarica rapida' }] },
+    ];
+
+    const specLabels = ['Potenza di picco', 'Autonomia assistita', 'Peso', 'Modalità di assistenza', 'Materiale telaio', 'Batteria', 'Impermeabilità', 'Pieghevole'];
+    const specData = [
+      ['1000 W', '800 W', '800 W', '400 W'],
+      ['30 km', '17,5 km', '17,5 km', '15 km'],
+      ['1,8 kg', '1,8 kg', '2 kg', '2 kg'],
+      ['12', '10', '10', '6'],
+      ['Carbonio + titanio', 'Fibra di carbonio', 'Lega + nylon', 'Lega + nylon'],
+      ['Sostituibile', 'Sostituibile', 'Integrata', 'Integrata'],
+      ['IPX4', 'IPX4', 'IPX4', 'IPX4'],
+      ['Sì · < 5 s', 'Sì · < 5 s', 'Sì', 'Sì'],
+    ];
+    const hl = (i) => this.state.model === i ? 'rgba(30,91,255,.05)' : 'transparent';
+    const specRows = specLabels.map((label, r) => ({
+      label,
+      v0: specData[r][0], v1: specData[r][1], v2: specData[r][2], v3: specData[r][3],
+      bg0: hl(0), bg1: hl(1), bg2: hl(2), bg3: hl(3),
+    }));
+
+    const boxItems = [
+      { short: 'esoscheletro', name: 'Esoscheletro X', sub: 'Unità principale pieghevole' },
+      { short: 'batteria', name: 'Batteria', sub: 'A sgancio rapido + caricatore' },
+      { short: 'cinghie', name: 'Kit cinghie', sub: 'Imbragatura regolabile' },
+      { short: 'custodia', name: 'Custodia da viaggio', sub: 'Trasporto e protezione' },
+    ];
+
+    const reviews = [
+      { text: 'In salita sembra di avere una marcia in più. Dopo 18 km di sentiero le gambe erano ancora fresche.', name: 'Luca M.', role: 'Escursionista · Dolomiti' },
+      { text: 'Lo uso per il pendolarismo in bici. La differenza sulle salite cittadine è enorme e si ripiega nello zaino.', name: 'Sara D.', role: 'Bike commuter · Milano' },
+      { text: 'Acquistato per mio padre, 72 anni. Ha ripreso a camminare a lungo senza affaticarsi. Demo decisiva.', name: 'Giorgio P.', role: 'Cliente privato · Roma' },
+      { text: 'Montaggio immediato, assistenza Meccanio impeccabile. Si sente che dietro c\u2019è ingegneria vera.', name: 'Elena R.', role: 'Trail runner · Torino' },
+    ];
+
+    const faqData = [
+      { q: 'Quanto tempo serve per abituarsi?', a: 'Pochi minuti. L\u2019assistenza segue il tuo movimento naturale invece di imporlo: la maggior parte delle persone cammina in modo fluido dopo la prima uscita.' },
+      { q: 'Posso usarlo sotto la pioggia?', a: 'Sì, tutti i modelli hanno protezione IPX4 contro schizzi e pioggia leggera. Evita l\u2019immersione completa e i getti diretti ad alta pressione.' },
+      { q: 'Quanto dura la batteria e posso sostituirla?', a: 'L\u2019autonomia va da 15 a 30 km a seconda del modello e della modalità. Su X Ultra e X Carbon la batteria è a sgancio rapido: ne porti una di scorta e raddoppi l\u2019autonomia.' },
+      { q: 'È adatto ad un uso professionale?', a: 'Per l\u2019ambito lavorativo consigliamo anche la linea HAPO di esoscheletri passivi. I nostri tecnici valutano l\u2019uso e propongono la soluzione corretta, con demo sul campo.' },
+      { q: 'Come funzionano spedizione e reso?', a: 'Spedizione assicurata e tracciata in tutta Italia. Hai 14 giorni per il reso gratuito e 2 anni di garanzia. L\u2019assistenza tecnica è gestita direttamente da Meccanio sul territorio.' },
+    ];
+    const faqs = faqData.map((f, i) => ({
+      q: f.q, a: f.a, isOpen: this.state.openFaq === i,
+      rot: this.state.openFaq === i ? 'rotate(45deg)' : 'rotate(0deg)',
+      toggle: () => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i })),
+    }));
+
+    const reassure = [
+      { title: 'Spedizione assicurata', sub: 'consegna tracciata in tutta Italia' },
+      { title: 'Reso gratuito 14 giorni', sub: 'cambi idea? lo rimandi indietro' },
+      { title: 'Garanzia 2 anni', sub: 'su tutta la gamma HyperShell' },
+      { title: 'Assistenza italiana', sub: 'supporto tecnico e formazione Meccanio' },
+    ];
+
+    return {
+      models, colors, gallery, galleryBadges, keySpecs, features, specRows, boxItems, reviews, faqs, reassure,
+      activeShotLabel,
+      selModelName: sel.name, selTagline: sel.tagline, selPrice: sel.price, selOldPrice: sel.oldPrice,
+      selSave: sel.save, selPower: sel.power, selRange: sel.range, selColorName: COLORS[this.state.color].name,
+      qty: this.state.qty,
+      incQty: () => this.setState(s => ({ qty: Math.min(s.qty + 1, 9) })),
+      decQty: () => this.setState(s => ({ qty: Math.max(s.qty - 1, 1) })),
+      addToCart: () => { this.setState({ added: true }); setTimeout(() => this.setState({ added: false }), 1800); },
+      cartLabel: this.state.added ? '✓ Aggiunto al carrello' : 'Aggiungi al carrello',
+      showStickyBar: this.state.scrolled,
+    };
+  }
+}
+</script>
+</body>
+</html>

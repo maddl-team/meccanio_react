@@ -1,0 +1,60 @@
+.bar {
+  background: var(--color-ink);
+  color: var(--color-light);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 9px 20px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+@keyframes mecPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  display: inline-block;
+  animation: mecPulse 2s ease-in-out infinite;
+  flex: 0 0 auto;
+}
+
+.text {
+  min-width: 0;
+}
+
+.cta {
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 1px;
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .bar {
+    letter-spacing: 0.08em;
+    gap: 10px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .text {
+    flex: 1;
+  }
+}
