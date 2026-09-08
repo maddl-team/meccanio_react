@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { hapo } from "@/data/hapo";
+import { Button } from "@/components/ui/Button";
 import styles from "./hapo.module.css";
 
 export function HapoTechSection() {
@@ -21,6 +22,9 @@ export function HapoTechSection() {
             ripetitivi — sollevare, piegarsi, lavorare a braccia alzate — è la
             tecnologia più affidabile e meno invasiva.
           </p>
+          <Button href="/tecnologia#principi" variant="underline">
+            Come funzionano gli esoscheletri passivi →
+          </Button>
         </div>
         <div className={styles.techPhoto}>
           <Image

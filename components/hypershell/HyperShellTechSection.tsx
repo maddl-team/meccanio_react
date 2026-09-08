@@ -24,7 +24,7 @@ export function HyperShellTechSection() {
             una camminata che resta naturale, ma richiede meno sforzo — non
             un&apos;andatura &quot;spinta&quot; artificialmente.
           </p>
-          <Button href="/hypershell/x-ultra" variant="underline">
+          <Button href="/tecnologia#motionengine" variant="underline">
             Approfondisci la tecnologia →
           </Button>
         </div>

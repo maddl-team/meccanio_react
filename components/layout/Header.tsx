@@ -27,6 +27,8 @@ export function Header() {
   const pathname = usePathname();
   const isAzienda = pathname === "/azienda";
   const isBrevetti = pathname === "/brevetti";
+  const isTecnologia =
+    pathname === "/tecnologia" || pathname.startsWith("/tecnologia/");
   const isFuturo = pathname === "/futuro" || pathname.startsWith("/futuro/");
   const isContatti = pathname === "/contatti";
   const isHapo = pathname === "/hapo" || pathname.startsWith("/hapo/");
@@ -81,7 +83,7 @@ export function Header() {
         ? "Richiedi informazioni"
         : isHypershell
           ? "Chiedi un consiglio"
-          : isBrevetti || isFuturo
+          : isBrevetti || isFuturo || isTecnologia
             ? "Contattaci"
             : isAzienda
               ? "Prenota una dimostrazione"

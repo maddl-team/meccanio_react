@@ -8,31 +8,42 @@ import { contatti } from "@/data/contatti";
 import { futuro } from "@/data/futuro";
 import { hapo } from "@/data/hapo";
 import { hypershell } from "@/data/hypershell";
+import { tecnologia } from "@/data/tecnologia";
 import styles from "./AnnouncementBar.module.css";
 
 export function AnnouncementBar() {
   const pathname = usePathname();
   const isBrevetti = pathname === "/brevetti";
   const isFuturo = pathname === "/futuro" || pathname.startsWith("/futuro/");
+  const isTecnologia =
+    pathname === "/tecnologia" || pathname.startsWith("/tecnologia/");
   const isContatti = pathname === "/contatti";
   const isHapo = pathname === "/hapo" || pathname.startsWith("/hapo/");
   const isHypershell =
     pathname === "/hypershell" || pathname.startsWith("/hypershell/");
   const isHyperProduct = pathname.startsWith("/hypershell/");
-  const hideCta = isBrevetti || isFuturo || isContatti || isHapo || isHypershell;
+  const hideCta =
+    isBrevetti ||
+    isFuturo ||
+    isTecnologia ||
+    isContatti ||
+    isHapo ||
+    isHypershell;
   const text = isBrevetti
     ? brevetti.announcement
     : isFuturo
       ? futuro.announcement
-      : isContatti
-        ? contatti.announcement
-        : isHapo
-          ? hapo.announcement
-          : isHyperProduct
-            ? hypershell.productAnnouncement
-            : isHypershell
-              ? hypershell.announcement
-              : announcement.text;
+      : isTecnologia
+        ? tecnologia.announcement
+        : isContatti
+          ? contatti.announcement
+          : isHapo
+            ? hapo.announcement
+            : isHyperProduct
+              ? hypershell.productAnnouncement
+              : isHypershell
+                ? hypershell.announcement
+                : announcement.text;
   const ctaHref = announcement.href;
 
   return (

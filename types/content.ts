@@ -118,6 +118,17 @@ export type FutureDirection = {
   imageAlt: string;
 };
 
+export type TechPrinciple = {
+  id: string;
+  kicker: string;
+  title: string;
+  desc: string;
+  href: string;
+  cta: string;
+  image: string;
+  imageAlt: string;
+};
+
 export type SolutionFamily = {
   href: string;
   name: string;

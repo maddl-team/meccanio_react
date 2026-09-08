@@ -55,6 +55,17 @@ export const navItems: NavItem[] = [
     ],
   },
   {
+    href: "/tecnologia",
+    label: "Tecnologia",
+    children: [
+      { href: "/tecnologia", label: "La tecnologia" },
+      {
+        href: "/tecnologia/materiali-e-ingegneria",
+        label: "Materiali e ingegneria",
+      },
+    ],
+  },
+  {
     href: "/futuro",
     label: "Visione",
     children: [
@@ -324,6 +335,8 @@ export const footerColumns: FooterColumn[] = [
       { href: "/hapo", label: "HAPO · esoscheletri passivi" },
       { href: "/hypershell", label: "HyperShell · serie X" },
       { href: "/hypershell/x-ultra", label: "HyperShell X Ultra" },
+      { href: "/tecnologia", label: "Tecnologia" },
+      { href: "/tecnologia/materiali-e-ingegneria", label: "Materiali e ingegneria" },
     ],
   },
   {
