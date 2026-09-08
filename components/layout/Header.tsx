@@ -99,7 +99,11 @@ export function Header() {
       className={`${styles.header} ${solid || isProductLine ? styles.solid : ""} ${open ? styles.open : ""}`}
     >
       <div className={styles.inner}>
-        <Logo href="/" className={styles.logo} />
+        <Logo
+          href="/"
+          className={styles.logo}
+          tone={open || !(solid || isProductLine) ? "white" : "blue"}
+        />
         <nav className={styles.nav} aria-label="Navigazione principale">
           {navItems.map((item) => {
             const isActive = isItemActive(item, pathname);

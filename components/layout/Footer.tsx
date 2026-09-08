@@ -13,7 +13,7 @@ export function Footer() {
       <div className={styles.inner}>
         <div className={styles.grid}>
           <div>
-            <Logo size="footer" className={styles.brand} />
+            <Logo href="/" size="footer" tone="white" className={styles.brand} />
             <p className={styles.tagline}>
               Ingegneria, automazione e robotica applicata alla persona e al
               lavoro. Progettazione meccanica dal 1999.

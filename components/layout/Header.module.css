@@ -29,12 +29,7 @@
 }
 
 .logo {
-  color: #fff;
-  transition: color 0.3s;
-}
-
-.solid .logo {
-  color: var(--color-ink);
+  flex: 0 0 auto;
 }
 
 .nav {
@@ -222,10 +217,6 @@
   backdrop-filter: none;
   border-bottom-color: rgba(255, 255, 255, 0.08);
   box-shadow: none;
-}
-
-.header.open .logo {
-  color: #fff;
 }
 
 .header.open .bars span {
