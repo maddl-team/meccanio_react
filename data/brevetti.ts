@@ -9,10 +9,41 @@ export const brevetti = {
 } as const;
 
 export const patentSlots: PatentSlot[] = [
-  { no: "01", label: "Brevetto — da inserire" },
-  { no: "02", label: "Brevetto — da inserire" },
-  { no: "03", label: "Brevetto — da inserire" },
-  { no: "04", label: "Brevetto — da inserire" },
+  {
+    no: "01",
+    label: "Banco prova ingranaggi ad assi paralleli",
+    area: "Prove e collaudi",
+  },
+  {
+    no: "02",
+    label: "Benna frantoio",
+    area: "Frantumazione",
+  },
+  {
+    no: "03",
+    label: "Frantoio a mascelle carrellato",
+    area: "Frantumazione",
+  },
+  {
+    no: "04",
+    label: "Generatore solare con motore a vapore",
+    area: "Energia",
+  },
+  {
+    no: "05",
+    label: "Macchina per taglio ingranaggi",
+    area: "Macchine utensili",
+  },
+  {
+    no: "06",
+    label: "Motore rotativo a gas ciclo Stirling",
+    area: "Energia",
+  },
+  {
+    no: "07",
+    label: "Sistema di accumulo energia acqua-ammoniaca",
+    area: "Accumulo energetico",
+  },
 ];
 
 export const designAreas: DesignArea[] = [

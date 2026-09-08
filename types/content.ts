@@ -99,6 +99,7 @@ export type FaqItem = {
 export type PatentSlot = {
   no: string;
   label: string;
+  area?: string;
 };
 
 export type DesignArea = {

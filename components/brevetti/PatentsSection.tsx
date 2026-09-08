@@ -14,11 +14,15 @@ export function PatentsSection() {
             Brevetti nazionali
           </h2>
           <p className={styles.patentsText}>
-            Meccanio è titolare di diversi brevetti nazionali legati alla
-            progettazione meccanica e all&apos;innovazione tecnologica. Questo
-            rappresenta un elemento distintivo importante: dimostra una capacità
-            interna non solo commerciale, ma progettuale, tecnica e di ricerca,
-            sviluppata in autonomia nel corso degli anni.
+            Meccanio è titolare di numerosi brevetti nazionali per innovazioni
+            tecnologiche, nati per migliorare processi produttivi. I brevetti
+            testimoniano la passione per la progettazione e il costante impegno
+            nella ricerca che da sempre contraddistingue lo staff.
+          </p>
+          <p className={styles.patentsText}>
+            Mettiamo a disposizione la stessa esperienza per consulenze di
+            fattibilità, verifica dei requisiti di brevettabilità, redazione
+            della documentazione tecnica e disegni meccanici per prototipi.
           </p>
           <Button href="/contatti" variant="dark">
             Richiedi informazioni tecniche →
@@ -27,19 +31,23 @@ export function PatentsSection() {
         <div className={styles.slots}>
           <div className={styles.slotsHead}>
             <span className={styles.slotsDot} aria-hidden="true" />
-            <span className={styles.slotsLabel}>Sezione in aggiornamento</span>
+            <span className={styles.slotsLabel}>
+              {patentSlots.length} brevetti nazionali
+            </span>
           </div>
           <p className={styles.slotsNote}>
-            [Sezione da completare con l&apos;elenco specifico dei brevetti
-            depositati, numeri di deposito e ambiti tecnici coperti, non appena
-            disponibili dal cliente.]
+            Alcuni dei brevetti ottenuti nel corso della nostra attività di
+            progettazione meccanica.
           </p>
           <div className={styles.slotGrid}>
             {patentSlots.map((slot) => (
-              <div key={slot.no} className={styles.slot}>
+              <article key={slot.no} className={styles.slot}>
                 <span className={styles.slotNo}>{slot.no}</span>
-                <span className={styles.slotName}>{slot.label}</span>
-              </div>
+                <h3 className={styles.slotName}>{slot.label}</h3>
+                {slot.area ? (
+                  <p className={styles.slotArea}>{slot.area}</p>
+                ) : null}
+              </article>
             ))}
           </div>
         </div>
